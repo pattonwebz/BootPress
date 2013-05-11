@@ -1,12 +1,11 @@
 /*
 Theme Name: BootPress
 Theme URI: http://www.theme-dev.com/bootpress
-Description: A WordPress theme built with love!
+Description: My Bootstrap WordPress Framwork.
 Version: 0.1
 Author: William Patton
 Author URI: http://www.pattonwebz.com/
 License: GPL
 License URI: http://www.opensource.org/licenses/gpl-license.php
 */
-
-@import url("/css/bootstrap.min.css");
+@import url("css/bootstrap.min.css");
