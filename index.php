@@ -1,32 +1,4 @@
-<?php 
-/** 
- * The main template 
- * 
- * This is used as the default file if no other alternitive is specified 
- * 
- */ 
-?> 
-<!DOCTYPE html>
-<html lang="en">
-  <head> 		
-		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title><?php if(is_home()|is_front_page()) { echo bloginfo("name"); echo " | "; echo bloginfo("description"); } elseif (get_post_meta($post->ID, 'custom_text', true)) { echo get_post_meta($post->ID, 'custom_text', true).' | '; echo bloginfo("name"); } else { wp_title(); }?></title>
-		<link rel="profile" href="http://gmpg.org/xfn/11" />
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-        <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
-		<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
-		<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-		<![endif]-->
-
-		<?php wp_head(); ?>
-  </head> 
-  <body class="container">
-  <div id="masthead">
-          <span id="site-title" class="lead text-center"><?php echo get_bloginfo ( 'title' ); ?></span> 
-          <span id="site-tagline" class="muted text-center"><?php echo get_bloginfo ( 'description' ); ?></span> 
-		  <?php wp_nav_menu( array( 'theme_location' => 'head-nav', 'container' => 'nav', 'container_class' => 'pull-right', 'menu_class' => 'nav nav-pills' ) ); ?>
+<?php get_header(); ?>
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide">
@@ -76,7 +48,7 @@
           <div class="post-content"><?php the_content(); ?></div> 
         <?php endwhile; // End the loop ?>         
       </div> 
-      <div id="footer"> 
+      <div id="footer navbar-fixed-bottom"> 
         <div class="footnote"> 
           <p class="text-center">
             <a href="http://www.pattonwebz.com/" title="PattonWebz">BootPress is a project from PattonWebz</a>
@@ -84,13 +56,14 @@
         </div> <!-- .links --> 
       </div>  <!-- #footer -->  
 	<?php wp_footer(); ?>  
-	<script>
-      $(document).ready(function(){
+<script type="text/javascript">
+	var $ = jQuery.noConflict ();
+	$(document).ready(function() {
         $('.carousel').carousel({
-          interval: 3000
+            interval: 3000
         });
-      });
-    </script>
+    });
+</script>
   </body>
   
 </html>
