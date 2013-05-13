@@ -25,5 +25,5 @@
   <body <?php body_class( 'container' ); ?>>
   <div id="masthead">
           <span id="site-title" class="lead text-center"><?php echo get_bloginfo ( 'title' ); ?></span> 
-          <span id="site-tagline" class="muted text-center"><?php echo get_bloginfo ( 'description' ); ?></span> 
-		  <?php wp_nav_menu( array( 'theme_location' => 'head-nav', 'container' => 'nav', 'container_class' => 'pull-right', 'menu_class' => 'nav nav-pills' ) ); ?>
+          <span id="site-tagline" class="muted text-center"><?php echo get_bloginfo ( 'description' ); ?></span>
+		  <?php if (has_nav_menu('head-nav')) {  wp_nav_menu( array( 'theme_location' => 'head-nav', 'container' => 'nav', 'container_class' => 'pull-right', 'menu_class' => 'nav nav-pills' ) ); } ?>
